@@ -1,0 +1,1911 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@400;500;600;700&display=swap')
+@import _vars
+@import _container
+@import _mixins
+
+
+
+
+
+
+::placeholder
+	color: $black
+	font-weight: 400
+	font-size: 16px
+
+::-moz-selection
+	color: #fff
+	background-color: #c8202e
+      
+::selection
+	color: #fff
+	background-color: #c8202e
+	
+body
+	font-family: 'Raleway', sans-serif
+	font-size: 16px
+	font-weight: 500
+	color: $black
+	overflow-x: hidden
+   
+    
+	&.scroll_disabled
+		overflow-y: hidden
+
+.hamburger-menu
+	width: 100%
+	height: 100vh
+	position: fixed
+	left: 0
+	top: 0
+	z-index: 999
+	background-color: #fff
+	display: none
+	&_top
+		display: flex
+		padding: 12px 0
+		padding-left: var(--bs-gutter-x, 0.75rem)
+		justify-content: space-between
+		align-items: center
+		padding-right: var(--bs-gutter-x, 0.75rem)	
+		border-bottom: 1px solid #EEF0F7
+		background: #1F2C32
+
+	&__close
+		path
+			fill: #fff
+
+	&__nav
+		display: flex
+		flex-direction: column
+		justify-content: space-between
+		height: 100%
+		max-height: 160px
+		.has-childs
+			display: flex
+			align-items: center
+			position: relative
+			&.active
+				.labgvidg-header__icon
+					transform: rotate(180deg)
+			.childs
+				display: none
+				position: absolute
+				top: 100%
+				left: 0%
+				transform: translate(50%, 0)
+				box-shadow: 0px 4px 34px rgba(0, 0, 0, 0.12)
+				background-color: #fff
+				z-index: 10
+				margin-top: 8px
+				ul
+					display: flex
+					flex-direction: column
+					align-items: flex-start
+					padding: 24px
+					grid-gap: 10px
+		a
+			font-style: normal
+			font-weight: 600
+			font-size: 16px
+			line-height: 19px
+			font-feature-settings: 'pnum' on, 'lnum' on
+			color: $black
+			display: block
+	&__content
+		display: flex
+		flex-direction: column
+		padding-left: var(--bs-gutter-x, 0.75rem)
+		padding-right: var(--bs-gutter-x, 0.75rem)
+		padding-top: 25px
+		padding-bottom: 25px
+		justify-content: space-between
+		height: 80%
+	&_wrapper
+		display: flex
+		flex-direction: column
+		justify-content: space-between
+		height: 100%
+
+	&__options
+		display: flex
+		flex-direction: column
+		max-height: 88px
+		height: 100%
+		justify-content: space-between
+		&-tel
+			font-style: normal
+			font-weight: 600
+			font-size: 20px
+			line-height: 23px
+			font-feature-settings: 'pnum' on, 'lnum' on
+			color: $black
+		&-email
+			font-style: normal
+			font-weight: 500
+			font-size: 16px
+			line-height: 19px
+			text-decoration-line: underline
+			font-feature-settings: 'pnum' on, 'lnum' on
+			color: $blackBlue
+	&__button
+		height: 64px
+		font-size: 12px !important
+.callback
+	background: #ffff
+	max-width: 626px
+	width: auto
+	margin: auto
+	position: relative
+	padding: 50px 80px
+	.mfp-close
+		color: #1F2C32
+	&-title
+		line-height: 45px
+		text-transform: uppercase
+		margin-bottom: 24px
+		text-align: center
+		color: #1F2C32
+		@include adaptiv-value('font-size', 36, 18, 1)
+	&-form
+		&__input
+			input
+				background: none
+				width: 100%
+				height: 48px
+				border-bottom: 1px solid #E72434
+				margin-bottom: 24px
+
+		&__submit
+			background: #E72434
+			display: flex
+			align-items: center
+			justify-content: center
+			font-style: normal
+			font-weight: 600
+			font-size: 16px
+			line-height: 19px
+			color: #FFFFFF
+			height: 56px
+			width: 100%
+			max-width: 209px
+			margin: auto
+
+.btnHover
+	transition: .3s all
+	&:hover
+		background: #c8202e
+		color: #FFFFFF
+.jq-selectbox__dropdown ul li:first-child
+	display: none
+.header
+
+	width: 100%
+	z-index: 9
+	transition: .3s all
+	background: none
+	&.header_fixed
+		position: fixed
+		top: 0
+		left: 0
+		box-shadow: 0 5px 25px rgba(0, 0, 0, 0.15)
+		background: #1F2C32
+	&__top
+		background: #1F2C32
+		&_wrapper
+			display: flex
+			align-items: center
+			justify-content: space-between
+	&__menu
+		&_mobile
+			display: none
+			&__logo
+				@include adaptiv-value('max-width', 181, 90, 1)
+				margin-right: auto
+				img
+					width: 100%
+			&__search
+				margin-right: 21px
+			&__account
+				margin-right: 21px
+	&__col
+		margin-right: 110px
+		a,
+		span
+			color: $white
+			text-decoration: none
+			font-style: normal
+			font-weight: 500
+			font-size: 14px
+			line-height: 16px
+			font-feature-settings: 'pnum' on, 'lnum' on
+	&__info
+		display: flex
+		justify-content: space-between
+		grid-gap: 25px
+	&__question
+		display: flex
+		align-items: center
+		span
+			margin-right: 12px
+		a
+			margin-right: 8px
+			&:last-child
+				margin-right: 0
+	&__social
+		display: flex
+		align-items: center
+		margin-right: 67px
+		span
+			margin-right: 12px
+		a
+			margin-right: 8px
+			&:last-child
+				margin-right: 0
+	&__main
+		display: flex
+		align-items: center
+		justify-content: space-between
+		width: 100%
+		max-width: 100px
+		margin-right: 0 !important
+	&__btn
+		background: #E72434
+		display: flex
+		align-items: center
+		justify-content: center
+		font-style: normal
+		font-weight: 600
+		font-size: 16px
+		line-height: 19px
+		color: #FFFFFF
+		height: 56px
+		width: 100%
+		max-width: 209px
+		margin-right: 0 !important
+	&__bottom
+
+		&_wrapper
+			display: flex
+			align-items: center
+			padding-top: 36px
+			padding-bottom: 10px
+			nav
+				margin-left: 117px
+				display: flex
+				align-items: center
+				grid-gap: 64px
+				a
+					font-style: normal
+					font-weight: 600
+					font-size: 16px
+					line-height: 19px
+					text-transform: uppercase
+					color: #FFFFFF
+					transition: .3s all
+					&:hover
+						color: #E72434
+	&__search
+		margin-left: auto
+		max-width: 321px 
+		height: 32px
+		width: 100%
+		position: relative
+		padding-right: 20px
+		border-bottom: 1px solid #FFFFFF
+		input
+			background: none
+			font-style: normal
+			font-weight: 500
+			font-size: 14px
+			line-height: 16px
+			color: #FFFFFF
+			width: 100%
+			height: 100%
+			&::placeholder
+				color: #FFFFFF
+			
+		button
+			position: absolute
+			top: 50%
+			right: 0
+			transform: translate(0px, -60%)
+.labgvidg-header
+	position: relative
+	&__text
+		display: flex
+		align-items: center
+		font-style: normal
+		cursor: pointer
+		font-weight: 600
+		font-size: 14px
+		line-height: 16px
+		text-transform: uppercase
+		color: #FFFFFF
+		&.active
+			.labgvidg-header__icon
+				transform: rotate(180deg)
+	&__icon
+		margin-left: 12px
+		transition: .3s
+	.labgvidg-header__dropdown
+		display: none
+		position: absolute
+		top: 100%
+		left: 50%
+		transform: translate(-50%, 0)
+		box-shadow: 0px 4px 34px rgba(0, 0, 0, 0.12)
+		background-color: #fff
+		z-index: 10
+		margin-top: 8px
+		&-inner
+			display: flex
+			flex-direction: column
+			align-items: flex-start
+			padding: 24px
+		&-item
+			color: #1E2A5E
+			text-transform: uppercase
+			margin-bottom: 15px
+			transition: .2s
+			&:last-child
+				margin-bottom: 0
+			&:hover
+				color: $accent
+
+.mainBlock
+	position: relative
+	margin-top: -1px
+	overflow: hidden
+	.swiper-slide
+	&__slider
+		position: relative
+		height: fit-content
+		
+		&-item
+			background-repeat: no-repeat
+			background-size: cover
+			background-position: center
+			padding: 266px 0
+		.container
+			position: relative
+		&-title
+			font-style: normal
+			font-weight: 600
+			font-size: 80px
+			line-height: 94px
+			text-transform: uppercase
+			color: $white
+			max-width: 1030px
+			cursor: default
+		&-subtitle
+			font-style: normal
+			font-weight: 500
+			font-size: 18px
+			line-height: 150%
+			color: $white
+			margin-top: 33px
+			margin-bottom: 66px
+			max-width: 585px
+			cursor: default
+		&-btn
+			height: 70px
+			width: 250px
+			background: #E72434
+			display: flex
+			align-items: center
+			justify-content: center
+			font-style: normal
+			font-weight: 600
+			font-size: 18px
+			line-height: 21px
+			color: $white
+	.slaider__buttons
+		position: absolute
+		bottom: 50px
+		right: 0
+		width: fit-content
+		display: flex
+		grid-gap: 25px
+		
+		svg
+			cursor: pointer
+			&:hover
+				fill: #E72434
+.mainCounter
+	position: relative
+	
+	height: 170px
+	display: flex
+	align-items: center
+	position: relative
+	margin-top: -85px
+	/* &::after
+		content: ''
+		position: absolute
+		right: -100px
+		bottom: 0
+		top: 0
+		clip-path: polygon(0% 0%, 0 0, 100% 50%, 0 100%, 0% 100%)
+		width: 100px
+		height: 100%
+		background: #e72434 */
+	&::before
+		content: ''
+		position: absolute
+		left: 0
+		top: 0
+		width: 90%
+		height: 100%
+		z-index: -1
+		background: url("data:image/svg+xml,%3Csvg viewBox='0 0 1778 169' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M-241 0H1676L1778 84.4938L1676 168.988H-241V0Z' fill='%23E72434'/%3E%3C/svg%3E%0A")
+		background-repeat: no-repeat
+		background-size: 100% 100%
+	&_wrapper
+		display: flex
+		align-items: center
+		justify-content: space-between
+		padding-right: 170px
+	&_item
+		display: flex
+		align-items: center
+		span
+			font-style: normal
+			font-weight: 500
+			font-size: 18px
+			line-height: 150%
+			color: #FFFFFF
+			max-width: 140px
+			
+	&-count
+		font-style: normal
+		font-weight: 600
+		font-size: 64px
+		line-height: 75px
+		text-align: center
+		text-transform: uppercase
+		font-feature-settings: 'pnum' on, 'lnum' on
+		color: #FFFFFF
+		margin-right: 20px
+.title
+	font-style: normal
+	font-weight: 600
+	font-size: 48px
+	line-height: 150%
+	text-transform: uppercase
+	color: #1F2C32
+	max-width: 688px
+.benefit
+	padding-top: 176px
+	padding-bottom: 288px
+	&-title
+		margin-bottom: 97px
+	&__wrapper
+		&_list
+			display: grid
+			grid-template-columns: repeat(3,1fr)
+			grid-row-gap: 90px
+			justify-content: space-between
+	&_item
+		display: flex
+		flex-direction: column
+		max-width: 402px
+		&-img
+			min-height: 110px
+		img
+			display: block
+			
+			width: fit-content
+		p
+			font-style: normal
+			font-weight: 600
+			font-size: 18px
+			line-height: 150%
+			color: #1F2C32
+			margin-bottom: 27px
+			max-width: 390px
+			
+		a
+			font-style: normal
+			font-weight: 600
+			font-size: 18px
+			line-height: 150%
+			text-decoration-line: underline
+			color: #E72434
+			margin-top: auto
+.cooperation
+	padding-bottom: 190px
+	&-title
+		margin-bottom: 66px
+	&__wrapper
+		&_list
+			display: grid
+			grid-template-columns: repeat(4,1fr)
+			grid-gap: 30px
+	&_item
+		width: 100%
+		height: 150px
+		display: flex
+		align-items: center
+		justify-content: center
+		border: 1px solid #00000026
+.review
+	background: #F8F8F8
+	padding-top: 187px
+	position: relative
+	margin-bottom: 200px
+	&__slider
+		overflow: hidden
+		height: fit-content
+		position: relative
+		bottom: -140px
+		&_item
+			display: grid
+			grid-template-columns: 1fr 1fr
+			align-items: center
+			overflow: hidden
+			&_left
+				background: #E72434
+				position: relative
+				height: 100%
+				width: 100%
+				display: flex
+				align-items: flex-start
+				justify-content: center
+				flex-direction: column
+				height: 518px
+				padding: 84px
+				&::before
+					content: ''
+					position: absolute
+					right: 50px
+					top: 0
+					background-image: url("data:image/svg+xml,%3Csvg  viewBox='0 0 212 255' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M64.4051 0L44.2785 132.868H69.7722V255H0V132.868L28.1772 0H64.4051ZM206.633 0L186.506 132.868H212V255H142.228V132.868L170.405 0H206.633Z' fill='%23EA3543'/%3E%3C/svg%3E%0A")
+					width: 212px 
+					height: 255px
+				img
+					border: 9px solid #F2F3F3
+					background: #F2F3F3
+					border-radius: 100px
+					margin-bottom: 32px
+					display: block
+					width: 100%
+					max-width: 115px
+					height: auto
+			&_right
+				display: flex
+				flex-direction: column
+				padding-left: 20%
+				height: 100%
+				p
+					font-style: normal
+					font-weight: 500
+					font-size: 24px
+					line-height: 170%
+					color: #1F2C32
+					padding-top: 50px
+					margin-bottom: 80px
+		&-comp
+			font-style: normal
+			font-weight: 600
+			font-size: 24px
+			line-height: 28px
+			color: #FFFFFF
+			margin-bottom: 20px
+		&-name
+			font-style: normal
+			font-weight: 500
+			font-size: 18px
+			line-height: 21px
+			color: #FFFFFF
+		.slaider__buttons
+			margin-top: auto
+			display: flex
+			justify-content: space-between
+			align-items: center
+			width: 465px
+			height: 84px
+			z-index: 3
+			position: fixed
+			bottom: -15%
+			right: calc(43% - 465px)
+
+		.buttons-slaider__numbers
+			position: relative
+			flex: 0 0 40px
+			margin-left: 35px
+			height: 100%
+
+		.swiper-pagination
+			position: absolute
+			left: 0
+			top: 50%
+			transform: translateY(-50%) !important
+			right: auto !important
+			bottom: auto !important
+			text-align: left !important
+			color: #1e2a5e !important
+
+		.buttons-slaider__line
+			width: 100%
+			height: 1px
+			background: #DEDEDE
+
+		.buttons-slaider__reght
+			flex: 0 0 170px
+			@media (max-width: 992px)
+				flex: 0 0 30%
+
+		.reght-buttons
+			position: relative
+			display: flex
+			justify-content: space-between
+			align-items: center
+			width: fit-content
+			grid-gap: 12px
+			padding-right: 35px
+			svg
+				cursor: pointer
+				&:hover
+					fill: #E72434
+
+.proccess
+	padding-top: 274px
+	padding-bottom: 245px
+	&-title
+		margin-bottom: 121px
+		max-width: 100%
+	&__list
+		display: flex
+		justify-content: space-between
+		align-items: center
+		position: relative
+		&::before
+			content: ''
+			top: 50%
+			position: absolute
+			left: 50%
+			margin-right: -50%
+			transform: translate(-50%, -50%) 
+			width: -webkit-fill-available
+			height: 3px
+			background: #E72434
+		&_item
+			max-width: 153px
+			min-height: 200px
+			display: flex
+			justify-content: space-between
+			flex-direction: column
+			position: relative
+			&-count
+				font-style: normal
+				font-weight: 700
+				font-size: 24px
+				line-height: 28px
+				font-feature-settings: 'pnum' on, 'lnum' on
+				color: #1F2C32
+				margin-bottom: 84px
+			svg
+				position: absolute
+				top: 50%
+				left: 0%
+				transform: translate(0%, -50%)
+				width: 35px
+				height: 35px
+
+			&-text
+				font-style: normal
+				font-weight: 600
+				font-size: 18px
+				line-height: 124%
+				color: #1F2C32
+				margin-top: 20px
+		
+.countres
+	padding-top: 152px
+	padding-bottom: 136px
+	background: #1F2C32
+	&-title
+		margin-bottom: 18px
+		color: #F5F5F5
+	&-subtitle
+		font-style: normal
+		font-weight: 600
+		font-size: 18px
+		line-height: 150%
+		color: #F5F5F5
+		margin-bottom: 85px
+	&__slider
+		overflow: hidden
+		height: fit-content
+			
+			
+		&_item
+			display: flex
+			justify-content: space-between
+			text-align: center
+			align-items: center
+			padding: 36px
+			flex-direction: column
+			min-height: 543px
+			background: #273840
+			img
+				margin: auto
+			&-title
+				font-style: normal
+				font-weight: 600
+				font-size: 24px
+				line-height: 127.4%
+				text-align: center
+				color: #FFFFFF
+			&-price
+				font-style: normal
+				font-weight: 500
+				font-size: 48px
+				line-height: 56px
+				font-feature-settings: 'pnum' on, 'lnum' on
+				color: #FFFFFF
+				margin-bottom: 34px
+			&-btn
+				background: #E72434
+				display: flex
+				justify-content: center
+				align-items: center
+				width: 205px
+				font-style: normal
+				font-weight: 600
+				font-size: 16px
+				line-height: 19px
+				color: #FFFFFF
+				height: 64px
+				margin-bottom: 30px
+			&-link
+				font-style: normal
+				font-weight: 500
+				font-size: 16px
+				line-height: 19px
+				text-decoration-line: underline
+				color: #FFFFFF
+		.slaider__buttons 
+			display: flex
+			justify-content: space-between
+			width: 100%
+			align-items: center
+			margin-top: 85px
+		.buttons-slaider__reght
+			display: flex
+			grid-gap: 12px
+			padding-right: 35px
+			svg
+				cursor: pointer
+				&:hover
+					fill: #E72434
+		.buttons-slaider__line
+			width: 100%
+			height: 1px
+			background: #DEDEDE
+			opacity: 0.1
+		.buttons-slaider__numbers
+			position: relative
+			flex: 0 0 40px
+			margin-left: 35px
+			height: 100%
+
+		.swiper-pagination
+			position: relative
+			left: 0
+			top: 0
+			transform: translateY(0%) !important
+			right: auto !important
+			bottom: auto !important
+			text-align: left !important
+			color: #FFFFFF !important
+			white-space: nowrap
+			font-style: normal
+			font-weight: 600
+			font-size: 18px
+			line-height: 150%
+			font-feature-settings: 'pnum' on, 'lnum' on
+.services
+	padding-top: 172px
+	background: rgba(31, 44, 50, 0.03)
+	&-title
+		margin-bottom: 46px
+	&__slider
+		overflow: hidden
+		height: fit-content
+		&_item
+			min-height: 446px
+			display: flex
+			flex-direction: column
+			cursor: pointer
+			&-img
+				display: block
+				width: 100%
+			&_content
+				padding: 32px
+				display: flex
+				flex-direction: column
+				background: #fff
+				min-height: 291px
+			&-title
+				font-style: normal
+				font-weight: 600
+				font-size: 32px
+				line-height: 38px
+				color: #1F2C32
+				margin-bottom: 24px
+				max-width: 385px
+			&-text
+				font-style: normal
+				font-weight: 500
+				font-size: 16px
+				line-height: 124%
+				color: #1F2C32
+	.slaider__buttons 
+		display: flex
+		justify-content: space-between
+		width: 100%
+		align-items: center
+		margin-top: 85px
+	.buttons-slaider__reght
+		display: flex
+		grid-gap: 12px
+		padding-right: 35px
+		svg
+			cursor: pointer
+			&:hover
+				fill: #E72434
+	.buttons-slaider__line
+		width: 100%
+		height: 1px
+		background: #DEDEDE
+		
+	.buttons-slaider__numbers
+		position: relative
+		flex: 0 0 40px
+		margin-left: 35px
+		height: 100%
+
+	.swiper-pagination
+		position: relative
+		left: 0
+		top: 0
+		transform: translateY(0%) !important
+		right: auto !important
+		bottom: auto !important
+		text-align: left !important
+		color: #1F2C32 !important
+		white-space: nowrap
+		font-style: normal
+		font-weight: 600
+		font-size: 18px
+		line-height: 150%
+		font-feature-settings: 'pnum' on, 'lnum' on
+.about
+	padding-top: 167px
+	background: #F8F8F8
+	&__wrapper
+		display: grid
+		grid-template-columns: 1fr 1fr
+		position: relative
+		align-items: center
+		bottom: -100px
+	&-title
+		font-style: normal
+		font-weight: 600
+		font-size: 48px
+		line-height: 150%
+		text-transform: uppercase
+		color: #1F2C32
+		margin-bottom: 35px
+	p
+		font-style: normal
+		font-weight: 500
+		font-size: 16px
+		line-height: 124%
+		color: #1F2C32
+		margin-bottom: 30px
+	&-link
+		margin-top: 30px
+		border: 1px solid #E72434
+		width: 197px
+		height: 70px
+		display: flex
+		align-items: center
+		justify-content: center
+		font-style: normal
+		font-weight: 600
+		font-size: 18px
+		line-height: 21px
+		color: #E72434
+		transition: .3s all ease-in-out
+		&:hover
+			background: #E72434
+			color: #fff
+
+.missinos
+	padding-top: 291px
+	&__wrapper
+		display: flex
+		align-items: center
+		justify-content: center
+		text-align: center
+		flex-direction: column
+		p
+			font-style: normal
+			font-weight: 500
+			font-size: 24px
+			line-height: 150%
+			text-align: center
+			color: #1F2C32
+			margin-bottom: 44px
+			max-width: 857px
+	&-title
+		margin-bottom: 21px
+		font-style: normal
+		font-weight: 700
+		font-size: 32px
+		line-height: 150%
+		color: #1F2C32
+.team
+	padding-top: 290px
+	&__wrapper
+		display: grid
+		grid-template-columns: 1fr 1fr
+		&_right
+			background: #E72434
+			padding: 112px 90px
+	&-title
+		font-style: normal
+		font-weight: 600
+		font-size: 48px
+		line-height: 150%
+		text-transform: uppercase
+		color: #1F2C32
+		margin-bottom: 12px
+	&-subtitle
+		font-style: normal
+		font-weight: 600
+		font-size: 18px
+		line-height: 150%
+		color: #1F2C32
+		margin-bottom: 59px
+	&-link
+		font-style: normal
+		font-weight: 600
+		font-size: 18px
+		line-height: 21px
+		color: #E72434
+		width: 197px
+		height: 70px
+		border: 1px solid #E72434
+		display: flex
+		align-items: center
+		justify-content: center
+		transition: .3s all ease-in-out
+		&:hover
+			background: #E72434
+			color: #fff
+	ul
+		li
+			list-style: none
+			position: relative
+			&::before
+				content: ''
+				position: absolute
+				background-image: url("data:image/svg+xml,%3Csvg width='15' height='15' viewBox='0 0 15 15' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Crect x='7.07129' y='0.428955' width='10' height='10' transform='rotate(45 7.07129 0.428955)' fill='white'/%3E%3C/svg%3E%0A")
+				background-repeat: no-repeat
+				background-position: center
+				background-size: contain
+				width: 15px
+				height: 15px
+				left: 0
+				top: 5px
+			font-style: normal
+			font-weight: 600
+			font-size: 18px
+			line-height: 150%
+			color: #FFFFFF
+			margin-bottom: 27px
+			padding-left: 32px
+			&:last-child
+				margin-bottom: 0
+	&-bg
+		width: 100%
+		position: relative
+		top: -110px
+		z-index: -1
+.information
+	padding-top: 255px
+	padding-bottom: 244px
+	&-title
+		font-style: normal
+		font-weight: 600
+		font-size: 48px
+		line-height: 150%
+		text-transform: uppercase
+		color: #1F2C32
+		margin-bottom: 107px
+	&__wrapper
+		display: grid
+		grid-template-columns: 1fr 1fr
+	&_tabs
+			li
+				margin-bottom: 32px
+				a
+					font-style: normal
+					font-weight: 500
+					font-size: 32px
+					line-height: 38px
+					color: #798084
+					position: relative
+				.tab-active
+					color: #1F2C32
+					font-weight: 600
+					&::before
+						content: ''
+						position: absolute
+						height: 2px
+						background: #E72434
+						width: 60px
+						left: -88px
+						top: 50%
+	&_item
+		max-height: 351px
+		overflow-y: scroll
+		padding-right: 30px
+		&::-webkit-scrollbar
+			width: 6px
+			background-color: none
+		&::-webkit-scrollbar-thumb
+			background-color: #CFCFCF
+		p
+			font-style: normal
+			font-weight: 500
+			font-size: 18px
+			line-height: 150%
+			color: #1F2C32
+			margin-bottom: 36px
+
+.calc
+	padding-top: 177px
+	padding-bottom: 237px
+	background: #F5F5F5
+	&-title
+		margin-bottom: 57px
+	&__wrapper
+		display: flex
+		flex-direction: column
+		&_row
+			display: grid
+			justify-content: space-between
+			grid-template-columns: repeat(4, 1fr)
+			margin-bottom: 40px
+			grid-gap: 2px
+			select
+				display: none
+			.jq-selectbox__select
+				border: none !important
+				box-shadow: none
+				text-shadow: none
+				border-radius: 0
+				background: #fff
+				font-family: 'Raleway'
+				font-style: normal
+				font-weight: 500
+				font-size: 18px
+				line-height: 100%
+				color: #1F2C32
+				height: 64px
+				display: flex
+				align-items: center
+				padding-left: 17px
+			.jq-selectbox__trigger
+				border: none !important
+				
+				&-arrow
+					top: 50% !important
+					right: 25px
+					border: 0 !important
+					background-image: url("data:image/svg+xml,%3Csvg width='14' height='8' viewBox='0 0 14 8' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M7.00023 5.17198L11.9502 0.221985L13.3642 1.63598L7.00023 7.99998L0.63623 1.63598L2.05023 0.221985L7.00023 5.17198Z' fill='%2303053D'/%3E%3C/svg%3E%0A")
+					width: 14px
+					height: 8px
+					background-repeat: no-repeat
+					background-size: cover
+			.jq-selectbox li:hover
+				background-color: #E72434
+				color: #FFF
+			.jq-number__field
+				width: 100%
+				height: 100%
+				border: none !important
+				box-shadow: none
+				border-radius: 0
+				display: flex
+				align-items: center
+				
+			.jq-number__spin
+				display: none
+			.jq-number
+				padding: 0
+			input
+					font-family: 'Raleway'
+					font-style: normal
+					font-weight: 500
+					font-size: 18px
+					line-height: 100%
+					color: #1F2C32
+					height: 100%
+					background: #fff
+					padding-left: 17px
+					&::placeholder
+						font-weight: 500
+						font-size: 18px
+						line-height: 100%
+						color: #1F2C32
+		&-title
+			font-style: normal
+			font-weight: 600
+			font-size: 12px
+			line-height: 100%
+			text-transform: uppercase
+			color: #798084
+			margin-bottom: 22px
+		&_sum
+			display: flex
+			align-items: center
+			margin-top: 22px
+			margin-bottom: 48px
+			.sum
+				font-style: normal
+				font-weight: 600
+				font-size: 14px
+				text-transform: uppercase
+				color: #1F2C32
+				margin-right: 62px
+				b
+					margin-left: 12px
+					font-size: 24px
+			.reset
+				margin-left: auto
+				display: flex
+				align-items: center
+				font-style: normal
+				font-weight: 600
+				font-size: 14px
+				text-transform: uppercase
+				color: #1F2C32
+				svg
+					margin-left: 12px
+	p
+		font-style: normal
+		font-weight: 400
+		font-size: 12px
+		line-height: 150%
+		color: #1F2C32
+	&-submit
+		margin-top: 48px
+		background: #E72434
+		width: 250px
+		height: 70px
+		font-style: normal
+		font-weight: 600
+		font-size: 18px
+		line-height: 21px
+		color: #FFFFFF
+		margin-right: auto
+		display: flex
+		align-items: center
+		justify-content: center
+
+.callbacks
+	background: url('../img/callback-bg.png') no-repeat center top
+	background-size: cover
+	&-title
+		padding: 150px 0
+		color: #fff
+		max-width: 920px
+	&__wrapper
+		display: grid
+		grid-template-columns: 1fr 1fr
+	&-offer
+		background: #E72434
+		display: flex
+		flex-direction: column
+		justify-content: center
+		align-items: center
+		height: 238px
+		font-style: normal
+		font-weight: 600
+		font-size: 24px
+
+		color: #FFFFFF
+		svg
+			margin-bottom: 20px
+	&-const
+		background: #1F2C32
+		height: 238px
+		font-style: normal
+		font-weight: 600
+		font-size: 24px
+
+		color: #FFFFFF
+		display: flex
+		flex-direction: column
+		justify-content: center
+		transition: .3s all
+		align-items: center
+		svg
+			margin-bottom: 20px
+		&:hover
+			background: #293941
+			color: #fff
+
+.whyWe
+	padding-top: 228px
+	padding-bottom: 289px
+	&-title
+		margin-bottom: 81px
+	&__wrapper
+		display: grid
+		grid-template-columns: repeat(3,1fr)
+		grid-row-gap: 100px
+		grid-column-gap: 64px
+		justify-content: space-between
+		
+	&-item
+		font-style: normal
+		font-weight: 600
+		font-size: 18px
+		line-height: 150%
+		color: #1F2C32
+		position: relative
+		padding-left: 50px
+		svg
+			position: absolute
+			left: 0
+			top: 0
+.news
+	padding-bottom: 330px
+	&-title
+		padding-bottom: 60px
+	&__wrapper
+		margin-bottom: 64px
+		overflow: hidden
+		height: fit-content
+	&_item
+		display: flex
+		justify-content: space-between
+		flex-direction: column
+		height: 100%
+		img
+			width: 100%
+			height: auto
+			object-fit: cover
+			object-position: center
+		&-title
+			margin-top: 33px
+			font-style: normal
+			font-weight: 600
+			font-size: 24px
+			line-height: 28px
+			color: #1F2C32
+			margin-bottom: 25px
+		time
+			font-style: normal
+			font-weight: 500
+			font-size: 16px
+			line-height: 124%
+			font-feature-settings: 'pnum' on, 'lnum' on
+			color: #1F2C32
+			display: flex
+			align-items: center
+			i
+				margin-right: 8px
+	&-link
+		font-style: normal
+		font-weight: 600
+		font-size: 18px
+		line-height: 21px
+		color: #E72434
+		width: 206px
+		height: 70px
+		border: 1px solid #E72434
+		display: flex
+		align-items: center
+		justify-content: center
+
+.footer
+	background: #F5F5F5
+	&__top
+		padding: 45px 0
+		border-bottom: 1px solid #D1D1D1
+		display: flex
+		align-items: center
+		justify-content: space-between
+		&_btn
+			display: flex
+			justify-content: space-between
+			align-items: center
+			p
+				font-style: normal
+				font-weight: 600
+				font-size: 16px
+				line-height: 150%
+				color: #1F2C32
+				margin-right: 42px
+				max-width: 280px
+			a
+				background: #E72434
+				width: 224px
+				height: 70px
+				font-style: normal
+				font-weight: 600
+				font-size: 18px
+				line-height: 21px
+				color: #FFFFFF
+				display: flex
+				align-items: center
+				justify-content: center
+	&__center
+		display: flex
+		justify-content: space-between
+		align-items: center
+		padding-top: 105px
+		padding-bottom: 45px
+		overflow: hidden
+		p,a,
+		address
+			font-style: normal 	
+			font-weight: 600
+			font-size: 16px
+			line-height: 135%
+			font-feature-settings: 'pnum' on, 'lnum' on
+			color: #1F2C32
+			margin-bottom: 12px
+		&_col
+			display: flex
+			flex-direction: column
+			max-width: 335px
+			&_mobile
+				flex-direction: row
+				flex-wrap: wrap
+
+				p
+					width: 100%
+				a
+					margin-right: 15px
+		&_img
+			img
+				position: relative
+				bottom: -50px
+				left: 0
+				right: 0
+	&__bottom
+		display: flex
+		align-items: center
+		padding: 70px 0
+		p
+			font-style: normal
+			font-weight: 600
+			font-size: 14px
+			line-height: 16px
+			color: #798084
+		&_col
+			margin-left: auto
+			display: flex
+			align-items: center
+			margin-right: 100px
+			padding-right: 23px
+		&_dev
+			display: flex
+			align-items: center
+			p
+				margin-right: 13px
+
+	.map__body
+		iframe
+			max-height: 356px
+			width: 100%
+
+@media (max-width:1600px)
+	.header
+		&__info
+			grid-gap: 15px
+		&__col
+			margin-right: 27px
+		&__bottom
+			&_wrapper 
+				nav
+					grid-gap: 30px
+					margin-left: 80px
+
+
+@media (max-width:1400px)
+	.header
+		&__btn
+			max-width: 160px
+		&__main
+			max-width: 70px
+		&__col
+			margin-right: 15px
+		&__bottom
+			&_wrapper
+				& nav
+					grid-gap: 10px
+					margin: 0 auto
+		&__search
+			max-width: 240px
+	.mainCounter
+		&_wrapper
+			padding-right: 90px
+		&-count
+			font-size: 50px
+		&_item 
+			span
+				font-size: 16px
+				
+	.review__slider 
+		.slaider__buttons
+			width: 350px
+			right: calc(43% - 350px)
+		.reght-buttons
+		
+			svg
+				width: 55px
+				height: 55px
+	.about__wrapper
+		grid-gap: 20px
+	.team__wrapper_right
+    	padding: 70px 49px
+	.footer__center_col
+		max-width: 222px
+
+@media (max-width:992px)
+	.btn-mobile-none
+		display: none
+	.header
+		&__menu
+			&_mobile
+				display: flex
+				justify-content: space-between
+				align-items: center
+				
+				background: #1F2C32
+				padding: 12px 16px
+				padding-left: var(--bs-gutter-x, 0.75rem)
+				padding-right: var(--bs-gutter-x, 0.75rem)
+		&__col a, 
+		&__col span
+			color: 	#1F2C32
+		&__col
+			justify-content: left
+		&__btn
+			max-width: 100%
+			width: 100%
+			justify-content: center
+		.labgvidg-header__text
+			color: #1F2C32
+		.labgvidg-header
+			width: fit-content
+			
+			.labgvidg-header__dropdown 
+				transform: translate(50%, -50%)
+			.labgvidg-header__dropdown-inner
+				flex-direction: row
+				padding: 12px
+				grid-gap: 10px
+			.labgvidg-header__dropdown-item
+				margin: 0
+	.mainBlock
+		&__slider
+			&-item
+				padding: 100px 0
+			&-title
+				@include adaptiv-value('font-size', 50, 32, 1)
+				@include adaptiv-value('line-height', 70, 38, 1)
+	
+			&-subtitle
+				@include adaptiv-value('font-size', 16, 14, 1)
+			&-btn
+				max-width: 100%
+				width: 100%
+				@include adaptiv-value('height', 70, 48, 1)
+				@include adaptiv-value('font-size', 16, 14, 1)
+		.slaider__buttons
+			display: none
+	.mainCounter 
+		margin-top: 0
+		background: #e72434
+		height: fit-content
+		padding: 20px 0
+		&::before
+			content: none
+		&-count
+			line-height: 100%
+			@include adaptiv-value('font-size', 40, 34, 1)
+			
+		&_wrapper
+			margin: 0
+			padding: 0
+			flex-direction: column
+			height: fit-content
+			grid-gap: 20px
+			align-items: flex-start
+		
+		&_item
+			flex-direction: column
+			align-items: flex-start
+			span
+				max-width: 100%
+				@include adaptiv-value('font-size', 16, 12, 1)
+	.benefit
+		@include adaptiv-value('padding-top', 100, 32, 1)
+		@include adaptiv-value('padding-bottom', 200, 150, 1)
+		&-title
+			margin-bottom: 32px
+		&__wrapper
+			&_list
+				grid-template-columns: 1fr
+				grid-row-gap: 48px
+		&_item 
+			p
+				margin-bottom: 0	
+				@include adaptiv-value('font-size', 16, 14, 1)
+			a
+				margin-top: 12px
+				@include adaptiv-value('font-size', 16, 14, 1)
+			&-img
+				max-width: 48px
+				min-height: 48px
+				margin-bottom: 12px
+
+	.title
+		@include adaptiv-value('font-size', 32, 24, 1)
+	.cooperation 
+		@include adaptiv-value('padding-bottom', 110, 32, 1)
+		&-title
+			margin-bottom: 32px
+		&__wrapper
+			&_list
+				grid-template-columns: repeat(2,1fr)
+				grid-gap: 4px
+	.review
+		padding-top: 31px
+		@include adaptiv-value('margin-bottom', 110, 65, 1)
+		&-title
+			margin-bottom: 16px
+		&__slider
+			bottom: 0
+			&_item
+				grid-template-columns: 1fr
+				&_left
+					height: fit-content
+					padding: 16px
+					padding-top: 40px
+					&::before
+						top: -80px
+					img
+						z-index: 1
+						margin-bottom: 12px
+				&_right
+					padding: 16px
+					p
+						padding: 0
+						margin: 0
+						@include adaptiv-value('font-size', 20, 14, 1)
+			&-comp,
+			&-name
+				z-index: 1
+			&-comp
+				margin-bottom: 12px
+				@include adaptiv-value('font-size', 20, 16, 1)
+			&-name
+				@include adaptiv-value('font-size', 16, 14, 1)
+			.slaider__buttons
+				position: relative
+				margin: 0
+				right: 0
+				width: auto
+				bottom: 0
+				display: flex
+				justify-content: center
+				height: 50px
+				.reght-buttons,
+				.buttons-slaider__line
+					display: none
+				.buttons-slaider__numbers
+					margin: 0
+	.proccess
+		padding-top: 0
+		@include adaptiv-value('padding-bottom', 170, 64, 1)
+		&-title
+			margin-bottom: 32px
+		&__list
+			flex-direction: column
+			align-items: flex-start
+			&::before
+				width: 3px
+				height: 88%
+				top: 9px
+				left: 60px
+				transform: translate(0,0)
+			&_item
+				max-width: 223px
+				min-height: auto
+				flex-direction: row
+				margin-bottom: 24px
+				&-count
+					margin: 0
+				&-text
+					margin: 0
+					
+					font-size: 14px
+				svg
+					position: relative
+					transform: rotate(90deg)
+					max-width: 18px
+					margin: 0 23px
+	.countres 
+		padding-top: 32px
+		padding-bottom: 32px
+		&-title
+			margin-bottom: 16px
+		&-subtitle
+			@include adaptiv-value('font-size', 16, 14, 1)
+			margin-bottom: 24px
+		&__slider
+			&_item
+				padding: 32px
+				&-title
+					font-size: 20px
+				&-price
+					font-size: 34px
+					margin-bottom: 29px
+				&-btn
+					width: 180px
+					height: 48px
+					margin-bottom: 21px
+				&-link
+					font-size: 14px
+			.slaider__buttons
+				justify-content: center
+				margin-top: 24px
+			.buttons-slaider__numbers
+				margin: 0
+			.buttons-slaider__reght,
+			.buttons-slaider__line
+				display: none
+			
+	.services 
+		@include adaptiv-value('padding-top', 110, 32, 1)
+		&-title
+			margin-bottom: 32px
+		&__slider
+			&_item
+				min-height: auto
+				&_content
+					padding: 16px
+					min-height: auto
+					padding-bottom: 49px
+				&-title
+					@include adaptiv-value('font-size', 30, 20, 1)
+					margin-bottom: 12px
+				&-text
+					p
+						font-size: 14px
+		.slaider__buttons
+			justify-content: center
+			margin-top: 24px
+		.buttons-slaider__reght,
+		.buttons-slaider__line
+			display: none
+		.buttons-slaider__numbers
+			margin: 0
+	.about
+		@include adaptiv-value('padding-top', 110, 64, 1)
+		padding-bottom: 32px
+		&__wrapper
+			display: flex
+			flex-direction: column-reverse
+			grid-gap: 32px
+			bottom: 0
+		&-title
+			margin-bottom: 12px
+		p
+			font-size: 14px
+			margin-bottom: 20px
+		&-link
+			height: 48px
+			font-size: 14px
+			width: 142px
+	.missinos 
+		@include adaptiv-value('padding-top', 110, 32, 1)
+		&-title
+			@include adaptiv-value('font-size', 24, 16, 1)
+			margin-bottom: 12px
+		p
+			@include adaptiv-value('font-size', 18, 14, 1)
+			margin-bottom: 24px
+	.team 
+		@include adaptiv-value('padding-top', 110, 72, 1)
+		&__wrapper
+			display: flex
+			flex-direction: column
+			&_right
+				padding: 32px 16px
+				ul
+					li
+						margin-bottom: 16px
+						font-size: 14px
+						padding-left: 15px
+						&::before
+							width: 6px
+							height: 6px
+		&-bg
+			top: 0
+		&-title
+			margin-bottom: 12px
+		&-subtitle
+			@include adaptiv-value('font-size', 18, 14, 1)
+			margin-bottom: 24px
+		&-link
+			margin-bottom: 32px
+			height: 48px
+			font-size: 14px
+			width: 142px
+	.information 
+		@include adaptiv-value('padding-top', 110, 32, 1)
+		@include adaptiv-value('padding-bottom', 110, 32, 1)
+		&-title
+			margin-bottom: 24px
+		&__wrapper
+			display: flex
+			flex-direction: column
+		&_tabs 
+			margin-bottom: 24px
+			li 
+				margin-bottom: 12px
+				a
+					@include adaptiv-value('font-size', 30, 20, 1)
+					line-height: 100%
+				.tab-active::before
+					content: none
+		&_item 
+			p
+				@include adaptiv-value('font-size', 16, 14, 1)
+				margin-bottom: 20px
+	.calc 
+		@include adaptiv-value('padding-top', 110, 32, 1)
+		@include adaptiv-value('padding-bottom', 110, 32, 1)
+		&-title
+			margin-bottom: 32px
+		&__wrapper
+			&-title
+				margin-bottom: 12px
+			&_row
+				margin-bottom: 24px
+				display: flex
+				flex-direction: column
+				grid-gap: 8px
+				.jq-selectbox__select,
+				.jq-number,
+				input
+					height: 48px
+			&_sum
+				display: flex
+				flex-direction: column-reverse
+				align-items: flex-start
+				margin-bottom: 24px
+				.reset
+					margin-left: 0
+					margin-right: auto
+					margin-bottom: 32px
+				.sum
+					margin-bottom: 12px
+					font-size: 12px
+					margin-right: 0
+					b
+						font-size: 16px
+		&-submit
+			margin-top: 32px
+			width: 100%
+			height: 48px
+	.callbacks 
+		&-title
+			padding: 45px 0
+		&__wrapper
+			display: flex
+			flex-direction: column
+		&-offer,
+		&-const
+			height: 64px
+			flex-direction: row
+			@include adaptiv-value('font-size', 16, 14, 1)
+			svg
+				margin: 0
+				margin-right: 12px
+	.whyWe
+		@include adaptiv-value('padding-top', 110, 32, 1)
+		@include adaptiv-value('padding-bottom', 110, 32, 1)
+		&-title
+			margin-bottom: 24px
+		&__wrapper
+			display: flex
+			flex-direction: column
+			grid-gap: 16px
+		&-item
+			@include adaptiv-value('font-size', 16, 14, 1)
+			padding-left: 32px
+			svg
+				width: 16px
+				height: 16px
+
+	.news 
+		@include adaptiv-value('padding-bottom', 110, 80, 1)
+		&-title
+			margin-bottom: 24px
+		&__wrapper
+			margin-bottom: 28px
+		&-link
+			height: 48px
+			width: 142px
+			font-size: 14px
+		&_item
+			&-title
+				margin: 16px 0 12px
+				@include adaptiv-value('font-size', 20, 16, 1)
+			time
+				@include adaptiv-value('font-size', 14, 12, 1)
+	.footer
+		&__top
+			flex-direction: column
+			padding: 20px 0
+			border: none
+			&_btn
+				flex-direction: column
+				align-items: stretch
+				width: 100%
+				
+				p
+					margin: 0
+					@include adaptiv-value('font-size', 14, 12, 1)
+					margin-bottom: 9px
+					max-width: 100%
+				a
+					width: 100%
+					height: 48px
+					font-size: 14px
+		&-logo
+			margin-right: auto
+			margin-bottom: 16px
+		&__center
+			padding: 0
+			flex-wrap: wrap
+			&_img
+				width: 48%
+				
+				img
+					bottom: 0
+				
+			&_col
+				max-width: 100%
+				width: 100%
+				margin-bottom: 32px
+				&_mobile
+					width: 50%
+			p, a, address
+				font-size: 14px
+		&__bottom 
+			flex-direction: column
+			padding: 18px 0
+			align-items: flex-start
+			
+			&_col
+				max-width: 100%
+				margin-left: 0
+				order: -1
+				margin-bottom: 24px
+			&_dev
+				margin-bottom: 12px
